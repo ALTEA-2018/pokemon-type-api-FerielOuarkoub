@@ -35,12 +35,9 @@ public class PokemonTypeServiceImpl implements PokemonTypeService{
     public List<PokemonType> getAllPokemonTypes(){
 
         List<PokemonType> trad = null;
-
         List<PokemonType> res  = pokemonTypeRepository.findAllPokemonType();
-
         for (PokemonType pt: res) {
-            int id =pt.getId();
-            pt.setName(translationRepository.getPokemonName(id, LocaleContextHolder.getLocale()));
+            pt.setName(translationRepository.getPokemonName(pt.getId(), LocaleContextHolder.getLocale()));
             trad.add(pt);
         }
         return trad;
