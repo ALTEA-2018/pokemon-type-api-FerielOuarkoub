@@ -31,6 +31,7 @@ public class PokemonTypeServiceImpl implements PokemonTypeService{
                 return t;
     }
 
+/**
     @Override
     public List<PokemonType> getAllPokemonTypes(){
 
@@ -42,6 +43,15 @@ public class PokemonTypeServiceImpl implements PokemonTypeService{
         }
         return trad;
     }
+**/
+
+
+@Override
+public List<PokemonType> getAllPokemonTypes() {
+
+    return pokemonTypeRepository.findAllPokemonType();
+}
+
 
 
     public PokemonTypeRepository getPokemonTypeRepository() {
